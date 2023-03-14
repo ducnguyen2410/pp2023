@@ -56,17 +56,17 @@ class Course(Student):
     
     def enter_grade(self, student_list: Student):
         grade_list = []
+        each = {}
         print("\n")
         id = input("Enter course ID that you want to enter grade: ")
         print("Course: " + self.get_name(int(id)))
-        for i in super().total:
+        for i in student_list.total:
             print("\n")
-            each = {}
             print("Student ID: " + i)
             print("Student name: " + student_list.get_name(str(i)))
             print("Student date of birth: " + student_list.get_dob(i))
             score = float(input("Enter the score of this student: "))
-            each[id] = score
+            each[i] = score
         grade_list = each
         self.total[int(id)].append(grade_list)
         
