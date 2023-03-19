@@ -1,19 +1,18 @@
-from input import Input
+from inputs import Input
 
 def main():
-    student_list = {}
-    course_list = {}
     check = True
     while check:
-        print("\n")
-        print("""What operations do you want?
+        print("------------------------")
+        options = input("""What operations do you want?
               1.Enroll a student
               2.Enter a new course
               3.Fill in students' grade
               4.Print students' list
-              5.Print students' grade in one course
-              6.Quit""")
-        options = input()
+              5.Print a student's grades
+              6.Get a student's GPA
+              7.Quit
+              Enter it here: """)
         if options.isdigit():
             options = int(options)
             if options == 1:
@@ -23,11 +22,11 @@ def main():
             elif options == 3:
                 course_list.Enter_grade()
             elif options == 4:
-                student_list.get_list()
+                student_list.get_list_student(student_list)
             elif options == 5:
-                course_list.get_grade(student_list)
+                course_list.get_grade(student_list, course_list)
             elif options == 6:
-                course_list.get_gpa(student_list)
+                student_list.get_gpa(student_list, course_list)
             elif options == 7:
                 check = False
         else:

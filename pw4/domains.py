@@ -2,9 +2,10 @@ class Same_fnc:
     def in_list(self): pass
 
 class Student(Same_fnc): 
-    total = {{}}
+    total = {}
     
     def __init__(self, id, name, dob):
+        self.total[int(id)] = {}
         self.total[int(id)]["name"] = name
         self.total[int(id)]["dob"] = dob
         self.total[int(id)]["grade"] = {}
@@ -16,9 +17,10 @@ class Student(Same_fnc):
             return False
         
 class Course(Same_fnc):
-    total = {{}}
+    total = {}
     
     def __init__(self, id, name, ect):
+        self.total[int(id)] = {}
         self.total[int(id)]["name"] = name
         self.total[int(id)]["ect"] = ect
         

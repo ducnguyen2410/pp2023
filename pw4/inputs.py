@@ -1,8 +1,10 @@
 from domains import Student, Course
+from outputs import Output
 
-class Input(Student, Course):
-    s_list = {}
-    c_list = {}
+class Input(Student, Course,Output):
+    s_list = Student(0,0,0)
+    c_list = Course(0,0,0)
+
     def __init__(self, str):
         if str == "student":
             self.Student_info()
@@ -11,7 +13,7 @@ class Input(Student, Course):
     
     def Student_info(self):
         id = input("Enter student ID: ")
-        if self.in_list(int(id)):
+        if self.s_list.in_list(int(id)):
             print("ID already in list!")
         else:
             name = input("Enter student name: ")
@@ -21,7 +23,7 @@ class Input(Student, Course):
             
     def Course_info(self):
         id = input("Enter the course ID: ")
-        if Course().in_list(id):
+        if self.c_list.in_list(id):
             print("ID already in list.")
         else:
             name = input("Enter the course name: ")
@@ -40,9 +42,6 @@ class Input(Student, Course):
                 score = input("Enter the student's grade: ")
                 while not score.isdecimal() and not score.isdigit():
                     score = input("Invalid score. Please type again: ")
-                    self.s_list.total[int(id)]["course"][int(c_id)] = score
+                self.s_list.total[int(id)]["grade"][int(c_id)] = score
                     
-    def get_list(self):
-        for i in self.s_list.total:
-            
                 
