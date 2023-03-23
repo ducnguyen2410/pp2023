@@ -11,4 +11,4 @@ Student Info
 
 * Student Name: Nguyen Duc Nguyen
 * Student ID: BI12-325
-
+* Class: CS
